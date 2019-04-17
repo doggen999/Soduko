@@ -6,7 +6,7 @@ import styles from "./style.scss";
 const Square = ({ value, masked, userInput, wrongAnswer }) => {
   return (
     <div className={classnames(styles.square, masked && styles.masked)}>
-      {masked
+      {masked || !value
         ? <input type="number" min="1" max="9" />
         : <span
           className={classnames(
@@ -16,8 +16,8 @@ const Square = ({ value, masked, userInput, wrongAnswer }) => {
   )
 };
 
-Square.PropTypes = {
-  value: PropTypes.number.isRequired,
+Square.propTypes = {
+  value: PropTypes.number,
   masked: PropTypes.bool,
   userInput: PropTypes.bool,
   wrongAnswer: PropTypes.bool
