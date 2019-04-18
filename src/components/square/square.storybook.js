@@ -5,7 +5,6 @@ import { storiesOf } from "@storybook/react";
 import Square from "./square";
 
 storiesOf("Components/Square", module)
-  .addDecorator(withKnobs)
   .add("Default Square", () => (
     <Square displayValue={4} correctValue={4} />
   ))
@@ -15,4 +14,3 @@ storiesOf("Components/Square", module)
   .add("User input", () => (
     <Square displayValue={null} correctValue={4} userInput={true} />
   ))
-  
