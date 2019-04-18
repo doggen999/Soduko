@@ -1,4 +1,8 @@
 .board {
+  width: 50vh;
+  height: 50vh;
+  margin: auto;
+
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }

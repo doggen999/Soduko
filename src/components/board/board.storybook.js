@@ -5,5 +5,6 @@ import sudoku from 'sudoku'
 import Board from './board'
 
 const board = sudoku.makepuzzle()
+const solution = sudoku.solvepuzzle(board)
 
-storiesOf("Components/Board").add("Default board", () => <Board board={board} />)
+storiesOf("Components/Board", module).add("Default board", () => <Board displayValues={board} solutionValues={solution} />)
