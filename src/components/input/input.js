@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 
 const Input = ({ value, handleKeyDown, handleChange }) => {
@@ -7,9 +7,9 @@ const Input = ({ value, handleKeyDown, handleChange }) => {
 }
 
 Input.propTypes = {
-  value: propTypes.string,
-  handleChange: propTypes.func.isRequired,
-  handleKeyDown: propTypes.func.isRequired
+  value: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
+  handleKeyDown: PropTypes.func.isRequired
 }
 
 export default Input

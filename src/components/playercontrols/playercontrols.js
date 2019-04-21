@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import styles from './style.scss'
 
 const PlayerControls = ({ onChangeDifficulty, onNewGame }) => {
@@ -43,8 +43,8 @@ const PlayerControls = ({ onChangeDifficulty, onNewGame }) => {
 }
 
 PlayerControls.propTypes = {
-  onChangeDifficulty: propTypes.func.isRequired,
-  onNewGame: propTypes.func.isRequired
+  onChangeDifficulty: PropTypes.func.isRequired,
+  onNewGame: PropTypes.func.isRequired
 }
 
 export default PlayerControls
