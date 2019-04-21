@@ -12,8 +12,8 @@ const Box = ({ displayValues, solutionValues }) => {
 }
 
 Box.propTypes = {
-  displayValues: PropTypes.arrayOf(propTypes.number).isRequired,
-  solutionValues: PropTypes.arrayOf(propTypes.number).isRequired
+  displayValues: PropTypes.arrayOf(PropTypes.number).isRequired,
+  solutionValues: PropTypes.arrayOf(PropTypes.number).isRequired
 }
 
 export default Box
