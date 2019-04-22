@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import RADIO_VALUES from '../../utils/constants'
 import styles from './style.scss'
 
 const PlayerControls = ({ onChangeDifficulty, onNewGame }) => {
-  const RADIO_VALUES = { easy: 'easy', medium: 'medium', hard: 'hard' }
   const [difficulty, setDifficulty] = useState(RADIO_VALUES.easy)
   return (
     <div className={styles.playerControls}>

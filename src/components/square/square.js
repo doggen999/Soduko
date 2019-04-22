@@ -4,13 +4,10 @@ import classnames from "classnames";
 import styles from "./style.scss";
 
 import Input from '../input/input'
-import useUserInput from '../../useUserInput'
+import useUserInput from '../../utils/useUserInput'
 
 const Square = ({ correctValue, displayValue }) => {
   const { val, handleChange, handleKeyDown } = useUserInput()
-
-  const foo = val == correctValue ? 'correct' : 'incorrect'
-  const inputClass = classnames(`styles.${foo}`)
 
   return (
     <div className={styles.square}>
