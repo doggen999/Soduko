@@ -9,7 +9,8 @@ import styles from './style.scss'
 const PlayerControls = () => {
   const [difficulty, setDifficulty] = useState(RADIO_VALUES.easy)
   const { dispatch } = useStore()
-  const newGame = useCallback(() => dispatch({ type: difficulty }, [dispatch]))
+  const newGame = useCallback(() => dispatch({ type: difficulty }, [dispatch])),
+    solve = useCallback(() => dispatch({ type: 'solve' }, [dispatch]))
   return (
     <div className={styles.playerControls}>
       <div className={styles.fieldset}>
@@ -41,6 +42,7 @@ const PlayerControls = () => {
       </div>
       <div className={styles.newGameButton}>
         <button onClick={newGame}>New game</button>
+        <button onClick={solve}>Solve puzzle</button>
       </div>
     </div >
   )
