@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import styles from "./style.scss";
 
-import Input from '../input/input'
-import useUserInput from '../../utils/useUserInput'
+import useUserInput from 'utils/useUserInput'
+
+import Input from 'components/input/input'
+
+import styles from "./style.scss";
 
 const Square = ({ correctValue, displayValue }) => {
   const { val, handleChange, handleKeyDown } = useUserInput()
@@ -14,7 +16,13 @@ const Square = ({ correctValue, displayValue }) => {
       <div className={styles.squareContent}>
         {displayValue
           ? <span>{displayValue}</span>
-          : <span className={classnames(styles.userInput, { [styles.incorrect]: val != correctValue, [styles.correct]: val == correctValue })} >
+          : <span
+            className={classnames(
+              styles.userInput,
+              {
+                [styles.incorrect]: val != correctValue,
+                [styles.correct]: val == correctValue
+              })} >
             <Input
               value={val}
               handleChange={handleChange}

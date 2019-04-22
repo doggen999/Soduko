@@ -36,7 +36,10 @@ export default {
       namedExports: {
         "node_modules/react/index.js": [
           "useState",
-          "useReducer"
+          "useReducer",
+          "useContext",
+          "createContext",
+          "useCallback"
         ],
       },
     }),
