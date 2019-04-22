@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-const useUserInput = callback => {
+const useUserInput = () => {
+
   const [val, setVal] = useState("")
 
   const handleKeyDown = e => {
@@ -17,6 +18,7 @@ const useUserInput = callback => {
       console.error("Invalid input")
     }
   }
+
   return {
     val, handleChange, handleKeyDown
   }
