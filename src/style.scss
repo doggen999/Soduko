@@ -1,3 +1,6 @@
 .app {
+  margin-top: 8vh;
   font-family: "Courier New", Courier, monospace;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
