@@ -1,4 +1,5 @@
 import RADIO_VALUES from './constants'
+import { board1, solution1, board2, solution2, board3, solution3 } from './mockdata'
 
 const reducer = (state, action) => {
   switch (action.type) {

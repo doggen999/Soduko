@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import RADIO_VALUES from '../../utils/constants'
 import styles from './style.scss'
 
-const PlayerControls = ({ onChangeDifficulty, onNewGame }) => {
+// TODO: Refactor radio inputs to discrete component
+const PlayerControls = ({ onNewGame }) => {
   const [difficulty, setDifficulty] = useState(RADIO_VALUES.easy)
   return (
     <div className={styles.playerControls}>
@@ -36,14 +37,13 @@ const PlayerControls = ({ onChangeDifficulty, onNewGame }) => {
         </fieldset>
       </div>
       <div className={styles.newGameButton}>
-        <button onClick={e => onNewGame(difficulty)}>New game</button>
+        <button onClick={() => onNewGame(difficulty)}>New game</button>
       </div>
-    </div>
+    </div >
   )
 }
 
 PlayerControls.propTypes = {
-  onChangeDifficulty: PropTypes.func.isRequired,
   onNewGame: PropTypes.func.isRequired
 }
 

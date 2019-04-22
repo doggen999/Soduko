@@ -35,14 +35,8 @@ export default {
       exclude: ["src/**"],
       namedExports: {
         "node_modules/react/index.js": [
-          "Children",
-          "Component",
-          "PropTypes",
-          "createElement",
           "useState",
-          "useEffect",
-          "useRef",
-          "useContext",
+          "useReducer"
         ],
       },
     }),
@@ -57,11 +51,11 @@ export default {
       runtimeHelpers: true,
     }),
     isWatchMode &&
-      liveServer({
-        host: "localhost",
-        root: config.outputFolder,
-        port: 1337,
-        noCssInject: true,
-      }),
+    liveServer({
+      host: "localhost",
+      root: config.outputFolder,
+      port: 1337,
+      noCssInject: true,
+    }),
   ],
 };
