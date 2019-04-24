@@ -39,7 +39,8 @@ export default {
           "useReducer",
           "useContext",
           "createContext",
-          "useCallback"
+          "useCallback",
+          "useEffect"
         ],
       },
     }),

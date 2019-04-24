@@ -20,7 +20,7 @@ const useUserInput = () => {
   }
 
   return {
-    val, handleChange, handleKeyDown
+    val, setVal, handleChange, handleKeyDown
   }
 }
 
