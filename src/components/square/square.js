@@ -3,23 +3,15 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 
 import { useStore } from 'store/useStore'
-import useUserInput from 'utils/useUserInput'
-
-import Input from 'components/input/input'
-
 import styles from "./style.scss";
 
-const handleChange = (setVal, value, dispatch) => {
-  dispatch({ type: 'userInput' })
-  setVal(value)
-}
-
 const Square = ({ correctValue, displayValue }) => {
-  // const { val, setVal, handleChange, handleKeyDown } = useUserInput()
-  const [val, setVal] = useState('')
   const { state, dispatch } = useStore()
+  const [val, setVal] = useState('')
 
-  useEffect(() => { if (state.initialState) { setVal('') } }, [state.initialState])
+  useEffect(() => {
+    if (state.initialState) { setVal('') }
+  }, [state.initialState])
 
   return (
     <div className={styles.square}>
@@ -33,11 +25,23 @@ const Square = ({ correctValue, displayValue }) => {
                 [styles.incorrect]: val != correctValue,
                 [styles.correct]: val == correctValue
               })} >
-            <input value={val} onChange={e => { handleChange(setVal, e.target.value, dispatch) }} />
-            {/* <Input
+            <input
               value={val}
-              handleChange={handleChange}
-              handleKeyDown={handleKeyDown} /> */}
+              onKeyDown={e => {
+                const keyCode = e.keyCode
+                if (keyCode === 8 || keyCode === 46) {
+                  e.stopPropagation()
+                  setVal('')
+                }
+              }}
+              onChange={e => {
+                const val = e.target.value
+                if (val > 0 && val < 10 && !isNaN(val)) {
+                  setVal(val)
+                  dispatch({ type: 'userInput' })
+                }
+              }}
+            />
           </span>
         }
       </div>
@@ -47,8 +51,7 @@ const Square = ({ correctValue, displayValue }) => {
 
 Square.propTypes = {
   correctValue: PropTypes.number.isRequired,
-  displayValue: PropTypes.number,
-  userInput: PropTypes.bool
+  displayValue: PropTypes.number
 };
 
 export default Square;
