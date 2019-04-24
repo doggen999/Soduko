@@ -19,7 +19,7 @@ const Square = ({ correctValue, displayValue }) => {
   const [val, setVal] = useState('')
   const { state, dispatch } = useStore()
 
-  useEffect(() => { setVal('') }, [state.initialState])
+  useEffect(() => { if (state.initialState) { setVal('') } }, [state.initialState])
 
   return (
     <div className={styles.square}>
