@@ -26,7 +26,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "i": "^0.3.6",
-    "jsdom": "^14.0.0",
+    "jsdom": "^16.5.0",
     "live-server": "^1.2.1",
     "mocha": "^6.1.4",
     "npm": "^6.9.0",
